@@ -299,7 +299,7 @@ proc write_mig_file_Go_mig_7series_0_0 { str_mig_prj_filepath } {
    puts $mig_prj_file {    <AXIParameters>}
    puts $mig_prj_file {      <C0_C_RD_WR_ARB_ALGORITHM>RD_PRI_REG</C0_C_RD_WR_ARB_ALGORITHM>}
    puts $mig_prj_file {      <C0_S_AXI_ADDR_WIDTH>29</C0_S_AXI_ADDR_WIDTH>}
-   puts $mig_prj_file {      <C0_S_AXI_DATA_WIDTH>64</C0_S_AXI_DATA_WIDTH>}
+   puts $mig_prj_file {      <C0_S_AXI_DATA_WIDTH>32</C0_S_AXI_DATA_WIDTH>}
    puts $mig_prj_file {      <C0_S_AXI_ID_WIDTH>1</C0_S_AXI_ID_WIDTH>}
    puts $mig_prj_file {      <C0_S_AXI_SUPPORTS_NARROW_BURST>0</C0_S_AXI_SUPPORTS_NARROW_BURST>}
    puts $mig_prj_file {    </AXIParameters>}
@@ -459,7 +459,7 @@ proc create_root_design { parentCell } {
    CONFIG.C_CACHE_BYTE_SIZE {65536} \
    CONFIG.C_DCACHE_ADDR_TAG {13} \
    CONFIG.C_DCACHE_BYTE_SIZE {65536} \
-   CONFIG.C_DCACHE_DATA_WIDTH {1} \
+   CONFIG.C_DCACHE_DATA_WIDTH {0} \
    CONFIG.C_DCACHE_FORCE_TAG_LUTRAM {0} \
    CONFIG.C_DCACHE_LINE_LEN {4} \
    CONFIG.C_DCACHE_USE_WRITEBACK {1} \
@@ -468,8 +468,8 @@ proc create_root_design { parentCell } {
    CONFIG.C_DIV_ZERO_EXCEPTION {1} \
    CONFIG.C_D_AXI {1} \
    CONFIG.C_D_LMB {1} \
-   CONFIG.C_FPU_EXCEPTION {1} \
-   CONFIG.C_ICACHE_DATA_WIDTH {1} \
+   CONFIG.C_FPU_EXCEPTION {0} \
+   CONFIG.C_ICACHE_DATA_WIDTH {0} \
    CONFIG.C_ICACHE_FORCE_TAG_LUTRAM {0} \
    CONFIG.C_ICACHE_LINE_LEN {4} \
    CONFIG.C_ICACHE_STREAMS {1} \
@@ -523,7 +523,7 @@ proc create_root_design { parentCell } {
   # Create instance: smartconnect_0, and set properties
   set smartconnect_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:smartconnect:1.0 smartconnect_0 ]
   set_property -dict [ list \
-   CONFIG.ADVANCED_PROPERTIES {   __view__ { functional { SW0 { DATA_WIDTH 64 } } }  } \
+   CONFIG.ADVANCED_PROPERTIES {    __view__ { }   } \
    CONFIG.NUM_CLKS {1} \
  ] $smartconnect_0
 
