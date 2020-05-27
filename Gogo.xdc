@@ -3,6 +3,10 @@ set_property PACKAGE_PIN V15 [get_ports LINK_LED]
 set_property IOSTANDARD LVCMOS33 [get_ports LINK_LED]
 set_property IOSTANDARD LVCMOS33 [get_ports USERLED]
 
+set_property PACKAGE_PIN T18 [get_ports ETH0_INT]
+set_property IOSTANDARD LVCMOS33 [get_ports ETH0_INT]
+set_property DRIVE 4 [get_ports ETH0_INT]
+
 set_property PACKAGE_PIN F4 [get_ports sys_clk_i_0]
 set_property IOSTANDARD SSTL15 [get_ports sys_clk_i_0]
 
