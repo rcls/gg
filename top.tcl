@@ -16,6 +16,19 @@ add_files -fileset constrs_1 -norecurse /home/ralph/Gogo/Gogo.xdc
 update_compile_order -fileset sources_1
 
 launch_runs synth_1 -jobs 8
+
+# While we waiting for synthesis, open up the hw manager.
+open_hw_manager
+connect_hw_server -url localhost:3121 -allow_non_jtag
+current_hw_target [get_hw_targets */xilinx_tcf/Digilent/251633000000A]
+open_hw_target -jtag_mode on
+set_property PARAM.FREQUENCY 5000000 [get_hw_targets]
+set a100 [lindex [get_hw_devices xc7a100t_0] 0]
+current_hw_device $a100
+refresh_hw_device $a100
+create_hw_cfgmem -hw_device $a100 [lindex [get_cfgmem_parts {s25fl256sxxxxxx0-spi-x1_x2_x4}] 0]
+
+
 wait_on_run synth_1
 launch_runs impl_1 -to_step write_bitstream -jobs 8
 wait_on_run impl_1
