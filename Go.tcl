@@ -462,7 +462,7 @@ proc create_root_design { parentCell } {
    CONFIG.C_DCACHE_DATA_WIDTH {0} \
    CONFIG.C_DCACHE_FORCE_TAG_LUTRAM {0} \
    CONFIG.C_DCACHE_LINE_LEN {4} \
-   CONFIG.C_DCACHE_USE_WRITEBACK {1} \
+   CONFIG.C_DCACHE_USE_WRITEBACK {0} \
    CONFIG.C_DCACHE_VICTIMS {8} \
    CONFIG.C_DEBUG_ENABLED {0} \
    CONFIG.C_DIV_ZERO_EXCEPTION {1} \
@@ -505,7 +505,7 @@ proc create_root_design { parentCell } {
 
   # Generate the PRJ File for MIG
   set str_mig_folder [get_property IP_DIR [ get_ips [ get_property CONFIG.Component_Name $mig_7series_0 ] ] ]
-  set str_mig_file_name mig_a.prj
+  set str_mig_file_name mig_b.prj
   set str_mig_file_path ${str_mig_folder}/${str_mig_file_name}
 
   write_mig_file_Go_mig_7series_0_0 $str_mig_file_path
@@ -514,7 +514,7 @@ proc create_root_design { parentCell } {
    CONFIG.BOARD_MIG_PARAM {ddr3_sdram} \
    CONFIG.MIG_DONT_TOUCH_PARAM {Custom} \
    CONFIG.RESET_BOARD_INTERFACE {Custom} \
-   CONFIG.XML_INPUT_FILE {mig_a.prj} \
+   CONFIG.XML_INPUT_FILE {mig_b.prj} \
  ] $mig_7series_0
 
   # Create instance: rst_mig_7series_0_100M, and set properties
