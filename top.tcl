@@ -1,10 +1,11 @@
 # vivado -source top.tcl
 
-set_param board.repoPaths /home/mirror/XilinxBoardStore
+set tb /home/mirror/trenz_board_files
+set_param board.repoPaths $tb
 
 create_project Gogo . -part xc7a100tcsg324-2
 
-set_property BOARD_PART_REPO_PATHS /home/mirror/XilinxBoardStore [current_project]
+set_property BOARD_PART_REPO_PATHS $tb [current_project]
 
 set_property board_part trenz.biz:te0710_02_100_2c:part0:1.0 [current_project]
 update_ip_catalog
