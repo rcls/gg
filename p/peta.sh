@@ -9,7 +9,10 @@ set -e -x
 
 cd p
 
-mv Gogo Gogo-save
+if test -e Gogo
+then
+    mv Gogo Gogo-save
+fi
 petalinux-create -t project -n Gogo --template microblaze --force
 cp -r Gogo-save/* Gogo/
 

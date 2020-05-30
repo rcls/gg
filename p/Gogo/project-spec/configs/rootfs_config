@@ -141,10 +141,10 @@ CONFIG_system-microblaze=y
 #
 CONFIG_mtd-utils=y
 # CONFIG_mtd-utils-ubifs is not set
-CONFIG_mtd-utils-jffs2=y
+# CONFIG_mtd-utils-jffs2 is not set
 # CONFIG_mtd-utils-dev is not set
 # CONFIG_mtd-utils-dbg is not set
-CONFIG_mtd-utils-misc=y
+# CONFIG_mtd-utils-misc is not set
 
 #
 # netbase 
@@ -726,15 +726,15 @@ CONFIG_tcf-agent=y
 #
 # bridge-utils 
 #
-# CONFIG_bridge-utils is not set
+CONFIG_bridge-utils=y
 # CONFIG_bridge-utils-dev is not set
 # CONFIG_bridge-utils-dbg is not set
 
 #
 # apps 
 #
-CONFIG_gpio-demo=y
-CONFIG_peekpoke=y
+# CONFIG_gpio-demo is not set
+# CONFIG_peekpoke is not set
 
 #
 # user packages 
