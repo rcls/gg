@@ -16,12 +16,12 @@ regenerate_bd_layout
 
 make_wrapper -files [get_files Go.bd] -top
 
-add_files -norecurse Gogo.srcs/sources_1/bd/Go/hdl/Go_wrapper.v
-add_files -fileset constrs_1 -norecurse /home/ralph/Gogo/Gogo.xdc
+add_files Gogo.srcs/sources_1/bd/Go/hdl/Go_wrapper.v
+add_files -fileset constrs_1 /home/ralph/Gogo/Gogo.xdc
 
 update_compile_order -fileset sources_1
 
-launch_runs synth_1 -jobs 8
+launch_runs synth_1 -jobs 4
 
 # While we waiting for synthesis, open up the hw manager.
 #open_hw_manager
@@ -46,7 +46,7 @@ launch_runs synth_1 -jobs 8
 
 
 wait_on_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 8
+launch_runs impl_1 -to_step write_bitstream -jobs 4
 wait_on_run impl_1
 
 write_hw_platform -fixed -force -include_bit -file Go_wrapper.xsa
