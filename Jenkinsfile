@@ -9,7 +9,7 @@ pipeline {
             }
             post {
                 always {
-                    archiveArtifacts artifacts:'Go_wrapper.xsa,**/*.ltx'
+                    archiveArtifacts artifacts:'Go_wrapper.xsa,**/*.ltx,p/Gogo/images/linux'
                 }
             }
         }
