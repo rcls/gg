@@ -7,13 +7,13 @@ source /home/peta/settings.sh
 
 set -e -x
 
-mkdir -p p
 cd p
 
+mv Gogo Gogo-save
 petalinux-create -t project -n Gogo --template microblaze --force
-cd Gogo
+cp -r Gogo-save/* Gogo/
 
-cp -r ../../peta-base/* .
+cd Gogo
 
 export MAKEFLAGS=-j8
 
