@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<meta-runner name="Vivado">
+  <description>Vivado</description>
+  <settings>
+    <parameters>
+      <param name="VivadoTCL" value="top.tcl" spec="text display='normal' label='Vivado TCL File' validationMode='any'" />
+    </parameters>
+    <build-runners>
+      <runner name="Vivado" type="simpleRunner">
+        <parameters>
+          <param name="command.executable" value="%vivado%" />
+          <param name="command.parameters" value="-mode batch -source %VivadoTCL%" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <requirements />
+  </settings>
+</meta-runner>
+

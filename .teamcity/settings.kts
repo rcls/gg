@@ -79,12 +79,20 @@ object Gogo : BuildType({
     }
 
     steps {
-        script {
-            name = "Vivado"
-            scriptContent = """
-                set -e -x
-                /home/Xilinx/Vivado/2019.2/bin/vivado -mode batch -source top.tcl
-            """.trimIndent()
+        step {
+            name = "Create"
+            type = "Vivado"
+            param("VivadoTCL", "create.tcl")
+        }
+        step {
+            name = "Synth"
+            type = "Vivado"
+            param("VivadoTCL", "synth.tcl")
+        }
+        step {
+            name = "Impl"
+            type = "Vivado"
+            param("VivadoTCL", "impl.tcl")
         }
         script {
             name = "Peta"
