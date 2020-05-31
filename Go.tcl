@@ -216,7 +216,7 @@ proc write_mig_file_Go_mig_7series_0_0 { str_mig_prj_filepath } {
    puts $mig_prj_file {    <DeepMemory>1</DeepMemory>}
    puts $mig_prj_file {    <DataMask>1</DataMask>}
    puts $mig_prj_file {    <ECC>Disabled</ECC>}
-   puts $mig_prj_file {    <Ordering>Normal</Ordering>}
+   puts $mig_prj_file {    <Ordering>Strict</Ordering>}
    puts $mig_prj_file {    <BankMachineCnt>4</BankMachineCnt>}
    puts $mig_prj_file {    <CustomPart>FALSE</CustomPart>}
    puts $mig_prj_file {    <NewPartName/>}
