@@ -449,11 +449,10 @@ proc create_root_design { parentCell } {
   # Create instance: microblaze_0, and set properties
   set microblaze_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:microblaze:11.0 microblaze_0 ]
   set_property -dict [ list \
-   CONFIG.C_ADDR_TAG_BITS {13} \
-   CONFIG.C_CACHE_BYTE_SIZE {65536} \
-   CONFIG.C_DCACHE_ADDR_TAG {13} \
-   CONFIG.C_DCACHE_BYTE_SIZE {65536} \
-   CONFIG.C_DCACHE_USE_WRITEBACK {0} \
+   CONFIG.C_ADDR_TAG_BITS {15} \
+   CONFIG.C_CACHE_BYTE_SIZE {16384} \
+   CONFIG.C_DCACHE_ADDR_TAG {15} \
+   CONFIG.C_DCACHE_BYTE_SIZE {16384} \
    CONFIG.C_DCACHE_VICTIMS {8} \
    CONFIG.C_DEBUG_ENABLED {0} \
    CONFIG.C_DIV_ZERO_EXCEPTION {1} \
@@ -462,8 +461,6 @@ proc create_root_design { parentCell } {
    CONFIG.C_ICACHE_STREAMS {1} \
    CONFIG.C_ICACHE_VICTIMS {8} \
    CONFIG.C_ILL_OPCODE_EXCEPTION {1} \
-   CONFIG.C_MMU_DTLB_SIZE {8} \
-   CONFIG.C_MMU_ITLB_SIZE {8} \
    CONFIG.C_MMU_ZONES {2} \
    CONFIG.C_M_AXI_D_BUS_EXCEPTION {1} \
    CONFIG.C_M_AXI_I_BUS_EXCEPTION {1} \
