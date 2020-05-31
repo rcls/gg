@@ -29,8 +29,6 @@ version = "2020.1"
 
 project {
 
-    vcsRoot(HomeRalphDevTeamcityGg)
-
     buildType(Copy)
     buildType(Gogo)
 }
@@ -102,10 +100,4 @@ object Gogo : BuildType({
             branchFilter = ""
         }
     }
-})
-
-object HomeRalphDevTeamcityGg : GitVcsRoot({
-    name = "teamcity-gg"
-    url = "git://localhost/home/ralph/dev/teamcity-gg"
-    branchSpec = "+:refs/heads/*"
 })
