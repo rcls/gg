@@ -449,10 +449,10 @@ proc create_root_design { parentCell } {
   # Create instance: microblaze_0, and set properties
   set microblaze_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:microblaze:11.0 microblaze_0 ]
   set_property -dict [ list \
-   CONFIG.C_ADDR_TAG_BITS {13} \
-   CONFIG.C_CACHE_BYTE_SIZE {65536} \
-   CONFIG.C_DCACHE_ADDR_TAG {13} \
-   CONFIG.C_DCACHE_BYTE_SIZE {65536} \
+   CONFIG.C_ADDR_TAG_BITS {14} \
+   CONFIG.C_CACHE_BYTE_SIZE {32768} \
+   CONFIG.C_DCACHE_ADDR_TAG {14} \
+   CONFIG.C_DCACHE_BYTE_SIZE {32768} \
    CONFIG.C_DCACHE_DATA_WIDTH {1} \
    CONFIG.C_DCACHE_LINE_LEN {8} \
    CONFIG.C_DCACHE_USE_WRITEBACK {1} \
